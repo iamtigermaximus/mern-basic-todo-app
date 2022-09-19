@@ -15,7 +15,7 @@ function UpdateTodo({ _id, closeHandler, updateHandler }) {
     e.preventDefault()
 
     axios
-      .put(`https://mern-basic-todo-app.herokuapp.com/${_id}`, todoInfo)
+      .put(`http://localhost:5500/api/todoapp/${_id}`, todoInfo)
       .then((res) => {
         setTodoInfo({ title: '', description: '' })
       })

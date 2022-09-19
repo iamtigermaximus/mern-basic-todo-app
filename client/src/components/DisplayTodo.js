@@ -13,7 +13,7 @@ export function DisplayTodo() {
   useEffect(
     function () {
       axios
-        .get('https://mern-basic-todo-app.herokuapp.com/api/todoapp')
+        .get('http://localhost:5500/api/todoapp')
         .then((res) => {
           setInfoTodo(res.data)
         })
@@ -34,9 +34,7 @@ export function DisplayTodo() {
   }
 
   const deleteHandler = (e) => {
-    axios.delete(
-      `https://mern-basic-todo-app.herokuapp.com/api/todoapp/${e.target.name}`
-    )
+    axios.delete(`http://localhost:5500/api/todoapp/${e.target.name}`)
 
     setInfoTodo((data) => {
       return data.filter((todo) => todo._id !== e.target.name)
