@@ -13,7 +13,7 @@ const CreateTodo = () => {
     e.preventDefault()
 
     axios
-      .post('http://localhost:5500/api/todoapp', todoInfo)
+      .post('https://mern-basic-todo-app.herokuapp.com/api/todoapp', todoInfo)
       .then((res) => {
         setTodoInfo({ title: '', description: '' })
         console.log(res.data.message)
